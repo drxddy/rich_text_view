@@ -98,6 +98,9 @@ class _RichTextViewState extends State<RichTextView> {
                       setState(() {
                         _expanded = !_expanded;
                       });
+                      if (_expanded) {
+                        widget.onMore?.call();
+                      }
                     }),
             ],
             style: widget.viewMoreLessStyle ?? linkStyle,
